@@ -74,55 +74,55 @@ function AddNewPlayerForm({puppies, setPuppies}) {
             <h3 id="form-h3">Add Your Puppy To The Roster:</h3><br></br>
 
             <form onSubmit={handleSubmit}>
-                <label for="name"> Name: </label><br />
+                <label htmlFor="name"> Name: </label><br />
 
                 <input value={name}
                     onChange={(e) => { setName(e.target.value) }}
                     type="text" name="name" id="name"
-                    placeholder required
+                    placeholder="name" required
                 
                 />
                 {/* <input type="text" name="name" id="name" placeholder required /> */}
 
                 <br />
                 <br />
-                <label for="breed"> Breed: </label><br />
+                <label htmlFor="breed"> Breed: </label><br />
 
                 <input value={breed} onChange={(e) => { setBreed(e.target.value) }}
-                    type="text" name="breed" id="breed" placeholder required
+                    type="text" name="breed" id="breed" placeholder="breed" required
                 />
 
                 {/* <input type="text" name="breed" id="breed" placeholder required /> */}
 
                 <br />
                 <br />
-                <label for="status"> Status: </label>   <br />
+                <label htmlFor="status"> Status: </label>   <br />
 
                 <select id="status" name="status" required
                 
                     onChange={(e) => { setStatus(e.target.value) }}
-                ><br />
+                >
                     <option value="bench">bench</option>
                     <option value="field">field</option>
                 </select>
 
                 <br />
                 <br />
-                <label for="image"> ImageUrl: </label><br />
+                <label htmlFor="image"> ImageUrl: </label><br />
 
                 <input value={imageUrl} onChange={(e) => { setImageUrl(e.target.value) }}
-                    type="text" name="image" id="image" placeholder required
+                    type="text" name="image" id="image" placeholder="image url" required
                 />
                 {/* <input type="text" name="image" id="image" placeholder required /><br></br> */}
                 <br />
                 <br />
 
-                <label for="teamId"> Team Id: </label><br />
+                <label htmlFor="teamId"> Team Id: </label><br />
 
                 <input value={teamId}
                     onChange={(e) => { setTeamId(e.target.value) }}
                     type="number" name="teamId" id="teamId"
-                    placeholder required
+                     required
 
                 />
                 <br />

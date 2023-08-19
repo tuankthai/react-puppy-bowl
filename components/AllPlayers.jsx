@@ -10,7 +10,7 @@ const cohortName = "2302-acc-pt-web-pt-e";
 const BASE_URL = 'https://fsa-puppy-bowl.herokuapp.com';
 
 
-function AllPlayers({puppies, setPuppies}) {
+function AllPlayers({ puppies, setPuppies, setSelectedPuppyId }) {
 
     // const [puppies, setPuppies] = useState([])
     // console.log("dummy puppies: ", puppies)
@@ -30,16 +30,16 @@ function AllPlayers({puppies, setPuppies}) {
 
                 const rawData = await fetch(`${BASE_URL}/api/${cohortName}/players`)
                 
-                console.log("after fetch")
-                console.log(rawData)
+                // console.log("after fetch")
+                // console.log(rawData)
                 const resultData = await rawData.text()
                 
-                console.log("after text")
-                console.log(resultData)
+                // console.log("after text")
+                // console.log(resultData)
                 const resultJsonData = JSON.parse(resultData)
                 
-                console.log("after JSON")
-                console.log(resultJsonData.data.players)
+                // console.log("after JSON")
+                // console.log(resultJsonData.data.players)
                 setPuppies(resultJsonData.data.players);
                 
 
@@ -56,7 +56,7 @@ function AllPlayers({puppies, setPuppies}) {
         
         <div className="all-players-container">
             {puppies.map((puppy) => {
-                return <PuppyBox key={puppy.id} puppy={puppy} />;
+                return <PuppyBox key={puppy.id} puppy={puppy} setSelectedPuppyId={setSelectedPuppyId} />;
             })}
 
         </div>
