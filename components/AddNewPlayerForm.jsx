@@ -17,6 +17,8 @@ function AddNewPlayerForm({puppies, setPuppies}) {
     const [teamId, setTeamId] = useState("")
     const [error, setError] = useState(null)
 
+    
+
     async function handleSubmit(e) {
         e.preventDefault();
         console.log("hello handleSubmit")

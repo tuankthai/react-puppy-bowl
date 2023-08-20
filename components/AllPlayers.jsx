@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import React from "react";
 import PuppyBox from './PuppyBox.jsx'
 import './AllPlayers.css'
+import { useNavigate } from "react-router-dom";
 
 const cohortName = "2302-acc-pt-web-pt-e";
 // Use the APIURL variable for fetch requests
@@ -10,10 +11,11 @@ const cohortName = "2302-acc-pt-web-pt-e";
 const BASE_URL = 'https://fsa-puppy-bowl.herokuapp.com';
 
 
-function AllPlayers({ puppies, setPuppies, setSelectedPuppyId }) {
+function AllPlayers({ puppies, setPuppies }) {
 
     // const [puppies, setPuppies] = useState([])
     // console.log("dummy puppies: ", puppies)
+    
 
 
     useEffect(() => {
@@ -56,7 +58,7 @@ function AllPlayers({ puppies, setPuppies, setSelectedPuppyId }) {
         
         <div className="all-players-container">
             {puppies.map((puppy) => {
-                return <PuppyBox key={puppy.id} puppy={puppy} setSelectedPuppyId={setSelectedPuppyId} />;
+                return <PuppyBox key={puppy.id} puppy={puppy}  />;
             })}
 
         </div>

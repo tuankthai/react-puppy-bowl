@@ -1,17 +1,11 @@
 
 import React from "react";
 import './AllPlayers.css'
-import SinglePlayer from "./SinglePlayer.jsx"
-import { Link } from "react-router-dom";
 
+import { useNavigate } from "react-router-dom";
 
-
-export default function PuppyBox({ puppy, setSelectedPuppyId }) {
-    // console.log(puppy.imageUrl)
-    function showSinglePlayer() {
-        return <Link to="/details"  >{" details page  "}</Link>
-
-    }
+export default function PuppyBox({ puppy}) {
+    const navigate = useNavigate();
 
     return (
         <div className="playerClass">
@@ -24,7 +18,8 @@ export default function PuppyBox({ puppy, setSelectedPuppyId }) {
                     onClick={
                     () => {
                         console.log("see details button clicked");
-                        setSelectedPuppyId(puppy.id);
+                        
+                        navigate('/:puppyId', { state: puppy.id });
                         
                     }}>
                     See Player Details</button>
